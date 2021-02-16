@@ -1,32 +1,3 @@
-<?php
-error_reporting(0);
-include "../koneksi/koneksi.php";
-session_start();
-if (empty($_SESSION['id_pengguna'])) {
-?>
-  <script>
-    alert("SILAHKAN LOGIN TERLEBIH DAHULU");
-    document.location = "../login/";
-  </script>
-<?php
-}
-$id_pengguna = $_SESSION['id_pengguna'];
-$akses = "SELECT * FROM tbl_pengguna WHERE id_pengguna = '$id_pengguna'";
-$sql = mysqli_query($connect, $akses);
-$row = mysqli_fetch_array($sql);
-$akses1 = $row['id_level'];
-if ($akses1 != "L0001") {
-?>
-
-  <script>
-    alert(" ANDA TIDAK MEMILIKI AKSES KE HALAMAN INI");
-    document.location = "../login/";
-  </script>
-<?php
-}
-?>
-
-<!-- VIEW BLANK PAGE -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,9 +9,8 @@ if ($akses1 != "L0001") {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
-  <script src="../assets/package/dist/sweetalert2.min.js"></script>
-  <link rel="stylesheet" href="../assets/package/dist/sweetalert2.min.css">
+  <title>SB Admin 2 - 404</title>
+
   <!-- Custom fonts for this template-->
   <link href="../sbadmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -63,7 +33,6 @@ if ($akses1 != "L0001") {
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <!-- <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div> -->
         <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
       </a>
 
@@ -139,8 +108,8 @@ if ($akses1 != "L0001") {
             <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
+            <a class="collapse-item active" href="404.html">404 Page</a>
+            <a class="collapse-item" href="blank.html">Blank Page</a>
           </div>
         </div>
       </li>
@@ -362,8 +331,13 @@ if ($akses1 != "L0001") {
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+          <!-- 404 Error Text -->
+          <div class="text-center">
+            <div class="error mx-auto" data-text="404">404</div>
+            <p class="lead text-gray-800 mb-5">Page Not Found</p>
+            <p class="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
+            <a href="index.html">&larr; Back to Dashboard</a>
+          </div>
 
         </div>
         <!-- /.container-fluid -->
@@ -375,7 +349,7 @@ if ($akses1 != "L0001") {
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; ICHOT 2021</span>
+            <span>Copyright &copy; Your Website 2019</span>
           </div>
         </div>
       </footer>
@@ -397,15 +371,15 @@ if ($akses1 != "L0001") {
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Siap Untuk Keluar?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Pilih "Logout" Untuk Keluar.</div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="logout.php">Logout</a>
+          <a class="btn btn-primary" href="login.html">Logout</a>
         </div>
       </div>
     </div>
@@ -420,8 +394,6 @@ if ($akses1 != "L0001") {
 
   <!-- Custom scripts for all pages-->
   <script src="../sbadmin/js/sb-admin-2.min.js"></script>
-  <!-- SW2 -->
-  <script src="../assets/sw2.js"></script>
 
 </body>
 

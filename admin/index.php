@@ -1,11 +1,10 @@
 <?php
 include 'header.php';
-if (isset($_get['page'])) {
-  switch ($_get['page']) {
+if (isset($_GET['page'])) {
+  switch ($_GET['page']) {
     case 'beranda':
       include 'pages/beranda.php';
       break;
-
     case 'pengguna':
       include 'pages/dt_pengguna.php';
       break;
@@ -47,6 +46,6 @@ if (isset($_get['page'])) {
       include 'pages/404.php';
   }
 } else {
-  include 'pages/beranda.php';
+  // include 'pages/beranda.php';
 }
 include 'footer.php';
