@@ -23,6 +23,20 @@
 <script src="../assets/js/lib/datatable/buttons.print.min.js"></script>
 <script src="../assets/js/lib/datatable/buttons.colVis.min.js"></script>
 <script src="../assets/js/lib/data-table/datatablesinit.js"></script>
+
+<!-- SB ADMIN 2 -->
+
+<!-- Bootstrap core JavaScript-->
+<script src="../sbadmin/vendor/jquery/jquery.min.js"></script>
+<script src="../sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="../sbadmin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="../sbadmin/js/sb-admin-2.min.js"></script>
+<!-- SW2 -->
+<script src="../assets/sw2.js"></script>
 <script>
   (function($) {
     "use strict";
